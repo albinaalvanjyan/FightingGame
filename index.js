@@ -6,7 +6,7 @@ canvas.height = 576
 
 c.fillRect(0, 0, canvas.width, canvas.height)
 
-const gravity = 0.7;
+const gravity = 0.4;
 const background = new Sprite({
     position: {
         x: 0,
@@ -181,10 +181,10 @@ function animate() {
     player.velocity.x = 0
     enemy.velocity.x = 0
     if (keys.a.pressed && player.lastKey === 'a') {
-        player.velocity.x = -5
+        player.velocity.x = -2
         player.switchSprite('run')
     } else if (keys.d.pressed && player.lastKey === 'd') {
-        player.velocity.x = 5
+        player.velocity.x = 2
         player.switchSprite('run')
     } else {
         player.switchSprite('idle')
@@ -196,10 +196,10 @@ function animate() {
     }
     //Enemy
     if (keys.ArrowLeft.pressed && enemy.lastKey === 'ArrowLeft') {
-        enemy.velocity.x = -5
+        enemy.velocity.x = -2
         enemy.switchSprite('run')
     } else if (keys.ArrowRight.pressed && enemy.lastKey === 'ArrowRight') {
-        enemy.velocity.x = 5
+        enemy.velocity.x = 2
         enemy.switchSprite('run')
     }
     else {
