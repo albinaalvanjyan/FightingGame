@@ -8,6 +8,7 @@ function rectangularCollision({ rectangle1, rectangle2 }) {
 }
 function determineWinner({ player, enemy, timerId }) {
     clearTimeout(timerId);
+    const resetbtn = document.getElementById('resetbtn');
     document.querySelector('#displayText').style.display = 'flex'
     if (player.health === enemy.health) {
         document.querySelector('#displayText').innerHTML = 'Tie'
@@ -18,6 +19,10 @@ function determineWinner({ player, enemy, timerId }) {
     else if (player.health < enemy.health) {
         document.querySelector('#displayText').innerHTML = 'Player 2 Wins'
     }
+    resetbtn.style.display = 'flex'
+    resetbtn.addEventListener('click', () => {
+        location.reload()
+    });
 }
 let timer = 60
 let timerId
@@ -31,3 +36,5 @@ function decreaseTimer() {
         determineWinner({ player, enemy, timerId })
     }
 }
+
+
