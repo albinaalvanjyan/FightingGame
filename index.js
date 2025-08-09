@@ -181,10 +181,10 @@ function animate() {
     player.velocity.x = 0
     enemy.velocity.x = 0
     if (keys.a.pressed && player.lastKey === 'a') {
-        player.velocity.x = -2
+        player.velocity.x = -3
         player.switchSprite('run')
     } else if (keys.d.pressed && player.lastKey === 'd') {
-        player.velocity.x = 2
+        player.velocity.x = 3
         player.switchSprite('run')
     } else {
         player.switchSprite('idle')
@@ -196,10 +196,10 @@ function animate() {
     }
     //Enemy
     if (keys.ArrowLeft.pressed && enemy.lastKey === 'ArrowLeft') {
-        enemy.velocity.x = -2
+        enemy.velocity.x = -3
         enemy.switchSprite('run')
     } else if (keys.ArrowRight.pressed && enemy.lastKey === 'ArrowRight') {
-        enemy.velocity.x = 2
+        enemy.velocity.x = 3
         enemy.switchSprite('run')
     }
     else {
@@ -258,7 +258,7 @@ window.addEventListener('keydown', (event) => {
                 player.lastKey = 'a'
                 break
             case 'w':
-                player.velocity.y = -20
+                player.velocity.y = -10
                 break
             case ' ':
                 player.attack()
@@ -277,7 +277,7 @@ window.addEventListener('keydown', (event) => {
                 enemy.lastKey = 'ArrowLeft'
                 break
             case 'ArrowUp':
-                enemy.velocity.y = -20
+                enemy.velocity.y = -10
                 break
             case 'ArrowDown':
                 enemy.attack()
